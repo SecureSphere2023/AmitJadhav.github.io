@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amit Jadhav</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/fav-icon.png">
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-clip clip-top">
+            <div class="marquee">
+                <div class="marquee-container">
+                    <span>Amit</span>
+                    <span>Amit</span>
+                    Amit
+                    <span>Amit</span>
+                    <span>Amit</span>
+                </div>
+            </div>
+        </div>
+        <div class="loader-clip clip-bottom">
+            <div class="marquee">
+                <div class="marquee-container">
+                    <span>Amit</span>
+                    <span>Amit</span>
+                    Amit
+                    <span>Amit</span>
+                    <span>Amit</span>
+                </div>
+            </div>
+        </div>
+        <div class="clip-center">
+            <div class="marquee">
+                <div class="marquee-container">
+                    <span>Amit</span>
+                    <span>Amit</span>
+                    Amit
+                    <span>Amit</span>
+                    <span>Amit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="nav">
+            <div>brand</div>
+            <div class="nav-items">
+                <a href="#">About</a>
+                <a href="#">Projects</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.from(".clip-top, .clip-bottom", 2, {
+            delay: 1,
+            height: "50vh",
+            ease: "power4.inOut",            
+        });
+
+        gsap.to(".marquee", 3.5, {
+            delay: 0.75,
+            top: "50%",
+            ease: "power4.inOut"
+        });
+
+        gsap.from(".clip-top .marquee, .clip-bottom .marquee", 5, {
+            delay: 1,
+            left: "100%",
+            ease: "power4.inOut"
+        })
+
+        gsap.from(".clip-center .marquee", 5, {
+            delay: 1,
+            left: "-50%",
+            ease: "power4.inOut"
+        })
+
+        gsap.to(".clip-top", 2, {
+            delay: 6,
+            clipPath: "inset(0 0 100% 0)",
+            ease: "power4.inOut",
+        })
+
+        gsap.to(".clip-bottom", 2, {
+            delay: 6,
+            clipPath: "inset(100% 0 0 0)",
+            ease: "power4.inOut",
+        })
+
+        gsap.to(".clip-top .marquee, .clip-bottom .marquee, .clip-center .marquee span", 1, {
+            delay: 6,
+            opacity: 0,
+            ease: "power2.inOut",
+        })
+
+    </script>
+</body>
+</html>
